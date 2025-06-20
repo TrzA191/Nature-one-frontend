@@ -8,7 +8,7 @@ import SkeletonSchema from "./skeletonSchema";
 import { ProductType } from "@/types/product";
 
 import { Card, CardContent } from "./ui/card";
-import { Expand, Icon, ShoppingCart } from "lucide-react";
+import { Expand, ShoppingCart } from "lucide-react";
 import { useRouter } from "next/navigation";
 import IconButton from "./icon-button";
 import { useCart } from "@/hooks/use-cart";
