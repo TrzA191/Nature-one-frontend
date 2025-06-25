@@ -29,7 +29,7 @@ const FeaturedProducts = () => {
                     {result !== null &&(
     result.map((product: ProductType)=>{                                
         // Desestructurar directamente del producto, no de attributes
-        const {id, slug, productName, images, origin} = product;
+        const {id, slug, productName, images} = product;
         
         return (
             <CarouselItem key={id} className="md:basis-1/2 lg:basis-1/3 group ">
