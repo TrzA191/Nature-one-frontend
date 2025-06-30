@@ -43,7 +43,7 @@ const ChooseCategory = () => {
                                     className="relative max-w-xs mx-auto overflow-hidden bg-no-repeat bg-cover flex-shrink-0 w-[31.5%]"
                                 >
                                     <img 
-                                        src={`${process.env.NEXT_PUBLIC_BACKEND_URL}${category.mainImage.url}`}
+                                        src={`${category.mainImage.url}`}
                                         alt={category.categoryName} 
                                         className='w-full h-full object-cover transition duration-300 ease-in-out rounded-2xl hover:scale-110'
                                     />
