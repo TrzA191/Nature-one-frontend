@@ -43,7 +43,7 @@ const Navbar = () => {
           className={`cursor-pointer ${lovedItems.length > 0 ? 'fill-black dark:fill-white' : ''}`}
           onClick={() => router.push("/loved-products")}
         />
-        <User strokeWidth="1" className="cursor-pointer" />
+        <User strokeWidth="1" className="cursor-pointer" onClick={() => router.push("/cuenta")}/>
         <ToggleTheme />
       </div>
     </div>

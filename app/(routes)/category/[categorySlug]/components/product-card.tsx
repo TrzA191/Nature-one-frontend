@@ -31,7 +31,7 @@ const ProductCard = (props: ProductCardProps) =>{
                         <CarouselItem key={image.id} className="group">
                            <img src={`${image.url}`}
                            alt="Image"
-                           className="rounded-xl"
+                           className="rounded-3xl"
                            /> 
 
                         <div className="absolute w-full px-6 transition duration-200 opacity-0 group-hover:opacity-100 bottom-5">

@@ -7,7 +7,7 @@ const BannerProduct = () => {
         <>
         <div className="mt-4 text-center">
             <p>Sumérgete en una experiencia única</p>
-            <h4 className="mt-2 text-5xl font-extrabold uppercase">Productos Saludables</h4>
+            <h4 className="mt-2 text-5xl font-extrabold uppercase text-primary">Productos Saludables</h4>
             <p className="my-2 text-lg">Siente el poder de lo puro</p>
             
             <Link

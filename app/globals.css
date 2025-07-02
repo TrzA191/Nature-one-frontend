@@ -46,6 +46,8 @@
 
 
 :root {
+   --highlight-bg: oklch(0.69 0.14 146.01);
+  --navbar: #98fc03;
   --background: #ffffff;
   --foreground: #18181b;
   --card: #f4f4f5;
@@ -80,13 +82,14 @@
 }
 
 .dark {
+  
   --background: #18181b;
   --foreground: #f4f4f5;
   --card: #27272a;
   --card-foreground: #f4f4f5;
   --popover: #27272a;
   --popover-foreground: #f4f4f5;
-  --primary: #f4f4f5;
+  --primary: #6bb853;
   --primary-foreground: #18181b;
   --secondary: #27272a;
   --secondary-foreground: #f4f4f5;

@@ -40,7 +40,7 @@ export const dataCarouselTop = [
 const CarouselTextBanner = () => {
     const router = useRouter()
   return (
-    <div className="bg-gray-200 dark:bg-primary">
+    <div className="bg-[var(--highlight-bg)]">
        <Carousel className="w-full max-w-4xl mx-auto" 
        plugins={[
           Autoplay({
@@ -48,7 +48,7 @@ const CarouselTextBanner = () => {
             
           })
         ]}>
-        <CarouselContent>
+        <CarouselContent className="bg-navbar">
         {dataCarouselTop.map(({ id, title, description, link }) => (
           <CarouselItem key={id} onClick={() => router.push(link)}  className="cursor-pointer">
             <div>

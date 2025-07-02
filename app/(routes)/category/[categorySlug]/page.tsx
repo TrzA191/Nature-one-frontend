@@ -37,7 +37,7 @@ export default function Page() {
 
             )}
             <Separator/>
-            <div className="sm:flex sm:justify-between">
+            <div className="sm:flex sm:justify-between ">
                 <FiltersControlsCategory setFilterOrigin={setFilterOrigin}/>
                 <div className="grid gap-5 mt-8 sm:grid-cols-2 md:gap-10">
                     {loading &&(

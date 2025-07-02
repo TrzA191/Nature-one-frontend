@@ -19,9 +19,17 @@ const MenuList = () => {
   return (
     <NavigationMenu viewport={false}>
       <NavigationMenuList>
+       
+  
         <NavigationMenuItem>
+           <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
+    <Link href="/">Inicio</Link>
+  </NavigationMenuLink>
+  {/*}
           <NavigationMenuTrigger>Inicio</NavigationMenuTrigger>
+          
           <NavigationMenuContent style={{ backgroundColor: 'rgba(255, 255, 255, 1)', border: '1px solid #e5e7eb', boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)', zIndex: 9999 }}>
+            
             <ul className="grid gap-2 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
               <li className="row-span-3">
                 <NavigationMenuLink asChild>
@@ -48,9 +56,15 @@ const MenuList = () => {
                 Styles for headings, paragraphs, lists...etc
               </ListItem>
             </ul>
-          </NavigationMenuContent>
+            
+          </NavigationMenuContent>}
+          */}
         </NavigationMenuItem>
         <NavigationMenuItem>
+           <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
+    <Link href="/nosotros">Nosotros</Link>
+  </NavigationMenuLink>
+          {/*}
           <NavigationMenuTrigger>Nosotros</NavigationMenuTrigger>
           <NavigationMenuContent style={{ backgroundColor: 'rgba(255, 255, 255, 1)', border: '1px solid #e5e7eb', boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)', zIndex: 9999 }}>
             <ul className="grid w-[400px] gap-2 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
@@ -65,19 +79,22 @@ const MenuList = () => {
               ))}
             </ul>
           </NavigationMenuContent>
+          */}
         </NavigationMenuItem>
+        {/* *
         <NavigationMenuItem>
           <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
             <Link href="/docs">Accesorios</Link>
           </NavigationMenuLink>
         </NavigationMenuItem>
+        */}
         <NavigationMenuItem>
           <NavigationMenuTrigger>Categorías</NavigationMenuTrigger>
           <NavigationMenuContent style={{ backgroundColor: 'rgba(255, 255, 255, 1)', border: '1px solid #e5e7eb', boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)', zIndex: 9999 }}>
             <ul className="grid w-[300px] gap-4">
               <li>
                 <NavigationMenuLink asChild>
-                  <Link href="#">
+                  <Link href="/category/alimentos">
                     <div className="font-medium">Alimentos</div>
                     <div className="text-muted-foreground">
                       Lo mejor de la naturaleza en tu mesa
@@ -85,7 +102,7 @@ const MenuList = () => {
                   </Link>
                 </NavigationMenuLink>
                 <NavigationMenuLink asChild>
-                  <Link href="#">
+                  <Link href="/category/bebidas">
                     <div className="font-medium">Bebidas</div>
                     <div className="text-muted-foreground">
                       Refrescante por dentro, vibrante por fuera
@@ -93,7 +110,7 @@ const MenuList = () => {
                   </Link>
                 </NavigationMenuLink>
                 <NavigationMenuLink asChild>
-                  <Link href="#">
+                  <Link href="/category/cuidado-personal">
                     <div className="font-medium">Cuidado personal</div>
                     <div className="text-muted-foreground">
                      Nutre tu piel, cuida tu bienestar
@@ -106,7 +123,7 @@ const MenuList = () => {
         </NavigationMenuItem>
         <NavigationMenuItem>
   <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-    <Link href="/docs">Contáctanos</Link>
+    <Link href="/contactanos">Contáctanos</Link>
   </NavigationMenuLink>
 </NavigationMenuItem>
 
