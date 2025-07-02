@@ -14,14 +14,17 @@ export default function RegistroPage() {
     confirmar: ""
   });
 
-  const handleChange = (e: any) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setForm((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Aquí iría la lógica de registro (API, validación, etc.)
-    console.log("Datos ingresados:", form);
+    console.log("Formulario enviado:", form);
+    // Aquí podrías validar contraseñas o enviar a una API
   };
 
   return (
@@ -81,7 +84,9 @@ export default function RegistroPage() {
               />
             </div>
 
-            <Button className="w-full" type="submit">Registrarse</Button>
+            <Button className="w-full" type="submit">
+              Registrarse
+            </Button>
           </form>
         </CardContent>
       </Card>

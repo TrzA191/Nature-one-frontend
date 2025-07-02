@@ -134,7 +134,8 @@ const MenuList = () => {
 }
 export default MenuList;
 
-
+{
+  /*
 const components: { title: string; href: string; description: string }[] = [
   {
     title: "Alert Dialog",
@@ -172,7 +173,10 @@ const components: { title: string; href: string; description: string }[] = [
       "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
   },
 ]
+  */
+}
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function ListItem({
   title,
   children,
