@@ -24,7 +24,7 @@ const LovedItemProduct = (props: LovedItemProductProps) => {
 
   return (
     <li className="flex p-6 border-b">
-        <ProductImageMiniature slug={product.slug} url={product.images[0].url} />
+        <ProductImageMiniature slug={product.slug} url={Array.isArray(product.images) && product.images.length > 0 ? product.images[0].url : ''} />
 
         <div className="flex justify-between flex-1 px-6">
             <div>                  

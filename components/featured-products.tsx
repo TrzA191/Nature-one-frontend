@@ -12,6 +12,7 @@ import { Expand, ShoppingCart } from "lucide-react";
 import { useRouter } from "next/navigation";
 import IconButton from "./icon-button";
 import { useCart } from "@/hooks/use-cart";
+import { getImageUrl } from "@/lib/utils";
 
 const FeaturedProducts = () => {
     const {result,loading}:ResponseType = UseGetFeaturedProducts();
@@ -26,7 +27,7 @@ const FeaturedProducts = () => {
                     {loading && (
                         <SkeletonSchema grid={3} />
                     )}
-                    {result !== null &&(
+                    {Array.isArray(result) && (
     result.map((product: ProductType)=>{                                
         // Desestructurar directamente del producto, no de attributes
         const {id, slug, productName, images} = product;
@@ -36,9 +37,15 @@ const FeaturedProducts = () => {
                 <div className="p-1">
                     <Card className="py-4 border border-gray-200 shadow-none ">
                         <CardContent className="relative flex items-center justify-center px-6 py-2 ">
-                            <img className="rounded-3xl"
-                            src={`${images[0].url}`} 
-                            alt="image featured" />
+                            {Array.isArray(images) && images.length > 0 ? (
+                                <img className="rounded-3xl"
+                                src={getImageUrl(images[0].url)} 
+                                alt="image featured" />
+                            ) : (
+                                <div className="w-full h-48 bg-gray-100 rounded-3xl flex items-center justify-center text-gray-400">
+                                    Sin imagen
+                                </div>
+                            )}
                             <div className="absolute w-full px-6 transition duaration-200 opacity-0 group-hover:opacity-100 bottom-5"> 
                                 <div className="flex justify-center gap-x-6">
                                     <IconButton onClick={() =>router.push(`product/${slug}`)} icon={<Expand size={20}/>}

@@ -17,7 +17,7 @@ const CartItem = (props: CartItemProps) => {
     return (
 
         <li className="flex py-6 bordere-b">
-            <ProductImageMiniature slug={product.slug} url={product.images[0].url} />
+            <ProductImageMiniature slug={product.slug} url={Array.isArray(product.images) && product.images.length > 0 ? product.images[0].url : ''} />
             <div className="flex justify-between flex-1 px-6"> 
                 <div>
                     <h2 className="text-lg font-bold">{product.productName}</h2>

@@ -24,17 +24,22 @@ export default function Page() {
     const [filterOrigin, setFilterOrigin] = useState('')
     //const router = useRouter();
     
-    const filteredProducts = result !== null && !loading &&(
-        filterOrigin == '' ? result:result.filter((product: ProductType) => product.origin == filterOrigin)
-    )
+    const filteredProducts = Array.isArray(result)
+        ? (filterOrigin === '' ? result : result.filter((product: ProductType) => product.origin === filterOrigin))
+        : [];
     
     console.log(filteredProducts);
 
+    const displayName = Array.isArray(result) && result.length > 0 
+        ? result[0].category.categoryName 
+        : typeof categorySlug === 'string' 
+            ? categorySlug.charAt(0).toUpperCase() + categorySlug.slice(1) 
+            : 'Categoría';
+
     return (
         <div className="max-w-6xl py-4 mx-auto sm:py-16 sm:px-24">
-            {result !== null && !loading &&(
-                <h1 className="text-3xl font-medium">Vida Orgánica: {result[0].category.categoryName} </h1>
-
+            {!loading && (
+                <h1 className="text-3xl font-medium">Vida Orgánica: {displayName} </h1>
             )}
             <Separator/>
             <div className="sm:flex sm:justify-between ">
@@ -43,15 +48,14 @@ export default function Page() {
                     {loading &&(
                         <SkeletonSchema grid={3}/>
                     )}
-                    {filteredProducts !== null && !loading && (
+                    {!loading && filteredProducts.length > 0 && (
                         filteredProducts.map((product: ProductType)=>(
                             <ProductCard key={product.id} product={product}/>
                         ))
-                        
                     )}
-                    {filteredProducts !== null && !loading && filteredProducts.length == 0 && (
-                        <p>No hay productos con este filtro</p>
-                    ) }
+                    {!loading && filteredProducts.length === 0 && (
+                        <p>No hay productos en esta categoría o con este filtro</p>
+                    )}
                 </div>
             </div>
         </div>

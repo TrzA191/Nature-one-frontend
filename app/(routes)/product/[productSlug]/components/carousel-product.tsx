@@ -1,4 +1,5 @@
 import { Carousel,CarouselContent,CarouselItem, CarouselPrevious, CarouselNext} from "@/components/ui/carousel";
+import { getImageUrl } from "@/lib/utils";
 
 interface CarouselProductProps {
   images: {
@@ -14,12 +15,20 @@ const CarouselProduct = (props:CarouselProductProps)=> {
         <div className="sm:px-16"> 
             <Carousel>
                 <CarouselContent>
-                    {images.map((image) =>(
-                        <CarouselItem key={image.id}>
-                            <img src={`${image.url}`}
-                            alt="image product" className="rounded-3xl" />
+                    {Array.isArray(images) && images.length > 0 ? (
+                        images.map((image) =>(
+                            <CarouselItem key={image.id}>
+                                <img src={getImageUrl(image.url)}
+                                alt="image product" className="rounded-3xl" />
+                            </CarouselItem>
+                        ))
+                    ) : (
+                        <CarouselItem>
+                            <div className="w-full h-96 bg-gray-100 rounded-3xl flex items-center justify-center text-gray-400">
+                                Sin imagen
+                            </div>
                         </CarouselItem>
-                    ))}
+                    )}
                 </CarouselContent>
                 
                 <CarouselPrevious/>

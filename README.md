@@ -51,6 +51,23 @@ El proyecto sigue una estructura limpia organizada por carpetas funcionales:
 
 ---
 
+## ⚙️ Configuración del Entorno (.env.local)
+
+El frontend requiere variables de entorno para conectarse con la API del backend de Strapi y comunicarse con la pasarela de pagos de Stripe.
+
+1. Copia el archivo de plantilla `.env.example` para crear tu configuración local:
+   ```bash
+   cp .env.example .env.local
+   ```
+2. Modifica el archivo `.env.local` y establece los valores de conexión:
+   * `NEXT_PUBLIC_BACKEND_URL`: URL de desarrollo del servidor backend (`http://localhost:1337`).
+   * `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY`: Tu clave pública de pruebas (`pk_test_...`) obtenida del dashboard de desarrollo en Stripe.
+
+> [!IMPORTANT]
+> Nunca comitas el archivo `.env.local` o cualquier archivo `.env` al repositorio de Git. Este archivo ya se encuentra bloqueado en tu `.gitignore`.
+
+---
+
 ## 🛠️ Comandos de Desarrollo
 
 Para este proyecto se utiliza **`pnpm`** como gestor de paquetes exclusivo. Asegúrate de tenerlo instalado de forma global.

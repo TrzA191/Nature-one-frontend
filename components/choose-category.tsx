@@ -4,6 +4,7 @@ import { CategoryType } from '@/types/category';
 import { ResponseType } from '@/types/response';
 import Link from 'next/link';
 import { useState } from 'react';
+import { getImageUrl } from '@/lib/utils';
 
 const ChooseCategory = () => {
     const {result, loading}:ResponseType= useGetCategories();
@@ -26,7 +27,7 @@ const ChooseCategory = () => {
         <div className="max-w-6xl py-4 mx-auto sm:py-16 sm:px-24">
             <h3 className="px-6 pb-4 text-3xl sm:pb-8">Elige tu categoría favorita</h3>
             
-            {!loading && result !== undefined && (
+            {!loading && Array.isArray(result) && (
                 <div className="relative">
                     {/* Contenedor del carrusel */}
                     <div className="overflow-hidden">
@@ -43,7 +44,7 @@ const ChooseCategory = () => {
                                     className="relative max-w-xs mx-auto overflow-hidden bg-no-repeat bg-cover flex-shrink-0 w-[31.5%]"
                                 >
                                     <img 
-                                        src={`${category.mainImage.url}`}
+                                        src={category.mainImage?.url ? getImageUrl(category.mainImage.url) : '/placeholder-category.jpg'}
                                         alt={category.categoryName} 
                                         className='w-full h-full object-cover transition duration-300 ease-in-out rounded-2xl hover:scale-110'
                                     />

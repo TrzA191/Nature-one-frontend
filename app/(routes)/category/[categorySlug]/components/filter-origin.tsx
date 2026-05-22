@@ -20,7 +20,7 @@ const FilterOrigin = (props:FilterOriginProps) => {
                 <p>Cargando...</p>
             )}
             <RadioGroup onValueChange={(value) => setFilterOrigin(value)}>
-                {result !== null && result.schema.attributes.origin.enum.map((origin: string) => (
+                {result?.schema?.attributes?.origin?.enum?.map((origin: string) => (
                     <div key={origin} className="flex items-center space-x-2">
                     <RadioGroupItem value={origin} id={origin}/>
                     <Label htmlFor={origin} >{origin}</Label>
