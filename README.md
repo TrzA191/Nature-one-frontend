@@ -120,13 +120,4 @@ pnpm lint
 A continuación se muestran las secciones clave diseñadas para este e-commerce:
 
 ### 🛍️ Catálogo y Categorías
-![Catálogo de Productos](.github/assets/catalogo.png)
-
-### 🛒 Carrito de Compras
-![Carrito de Compras](.github/assets/carrito.png)
-
-### 💳 Pasarela de Pago (Stripe)
-![Pasarela de Pago](.github/assets/stripe.png)
-
-### 📱 Experiencia Móvil
-![Experiencia Móvil](.github/assets/movil.png)
+![Catálogo de Productos](.github/assets/categoria.png)
