@@ -1,7 +1,5 @@
 # 🌿 Nature-One - Tienda de Productos Naturales (Proyecto Demostrativo)
 
-> **E-commerce moderno y dinámico de productos naturales desarrollado con Next.js 15, React 19 y Tailwind CSS v4.**
-
 Nature-One es un proyecto frontend moderno de comercio electrónico (e-commerce) desarrollado como demostración práctica para exhibir el diseño e implementación de plataformas dinámicas, rápidas e interactivas. Con una temática enfocada en la venta de productos naturales y orgánicos, este sitio sirve de portafolio para demostrar flujos de usuario completos, desde la exploración de productos hasta el proceso de pago.
 
 ![Vista Principal (Hero)](.github/assets/hero.png)
